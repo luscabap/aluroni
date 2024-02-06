@@ -3,6 +3,7 @@ import styles from "./Inicio.module.scss";
 import stylesTema from '../../styles/Tema.module.scss';
 import nossaCasa from './nossa_casa.png';
 import { useNavigate } from "react-router-dom";
+import { Prato } from "types/Prato";
 
 
 export default function Inicio() {
@@ -11,7 +12,7 @@ export default function Inicio() {
     
     const navigate = useNavigate();
 
-    function redicirecionaDetalhes(prato: typeof cardapio[0]){
+    function redicirecionaDetalhes(prato: Prato){
         navigate(`/prato/${prato.id}`, { state: { prato }, replace: true })
     }
 
